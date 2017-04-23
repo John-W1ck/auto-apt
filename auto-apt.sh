@@ -9,7 +9,7 @@ echo -e "\e[1;34mAutor :\e[0m \e[1;31mJohn-Wick\e[0m" $(echo -e "\e[1;32mV0.2\e[
 echo -e "\e[1;34mwww.youtube.com/channel/UCbtc0FBL8lzi5S3WkTzjS4w\e[0m : \e[1;31mSUSCRÍBETE\e[0m"
 echo -e "\e[1;34mwww.facebook.com/profile.php?id=100014284386639\e[0m  : \e[1;31mAGREGAME\e[0m"
 echo -e "\e[1;32mDIA :\e[0m $(date +%A;) \e[1;32mFECHA :\e[0m $(date +%d/%m/%Y;) \e[1;32mHORA :\e[0m $(date +%T;)"
-echo -e "\e[1;32mUsuario :\e[0m" $(whoami;)
+echo -e "\e[1;32mUsuario :\e[0m" $(whoami;) $(echo -e "\e[1;32mMaquina :\e[0m" $(uname -n;))
 echo
 {
     bar=" []** ACTUALIZANDO SOURCES.LIST ** "
@@ -56,7 +56,7 @@ inteligentemente los cambios de dependencias con las nuevas versiones de los paq
 los paquetes más importantes a costa de los menos importantes, si es necesario. 
 Por lo tanto, el comando apt-get dist-upgrade en realidad puede borrar algunos 
 paquetes en casos raros pero necesarias.\e[0m"
-sleep 1
+sleep 3
 sudo apt-get -y dist-upgrade
 {
     bar=" []** BUSCANDO ERRORES Y REPARANDO ** "
@@ -72,7 +72,7 @@ sudo apt-get -y dist-upgrade
 sleep 1
 echo
 {
-    bar=" []** Removiendo las dependencias incumplidas ** "
+    bar=" []** Removiendo dependencias incumplidas ** "
     barlength=${#bar}
     i=0
     while ((i < 100)); do
@@ -114,7 +114,7 @@ echo
 sleep 01
 sudo apt-get update 2> /dev/null
 {
-    bar=" []** Instalando dependencias ** "
+    bar=" []** Instalando dependencias  incumplidas ** "
     barlength=${#bar}
     i=0
     while ((i < 100)); do
@@ -129,7 +129,7 @@ sleep 01
 sudo apt-get -f -y install
 echo
 {
-    bar=" []** Espere.. Terminando ** "
+    bar=" []** Espere.. Terminando.. ** "
     barlength=${#bar}
     i=0
     while ((i < 100)); do
